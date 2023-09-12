@@ -41,6 +41,10 @@ public class ModifyCustomer
 					{
 						System.out.println("First Name Updated");
 					}
+					else
+					{
+						System.out.println("Not found");
+					}
 					break;
 				}
 				case 2:
@@ -51,6 +55,10 @@ public class ModifyCustomer
 					if(flag)
 					{
 						System.out.println("Last Name Updated");
+					}
+					else
+					{
+						System.out.println("Not found");
 					}
 					break;
 				}
@@ -67,6 +75,10 @@ public class ModifyCustomer
 					{
 						System.out.println("Phone Number Updated");
 					}
+					else
+					{
+						System.out.println("Not found");
+					}
 					break;
 				}
 				case 4:
@@ -77,6 +89,10 @@ public class ModifyCustomer
 					if(flag)
 					{
 						System.out.println("Gender Updated");
+					}
+					else
+					{
+						System.out.println("Not found");
 					}
 					break;
 				}
@@ -89,6 +105,10 @@ public class ModifyCustomer
 					{
 						System.out.println("Address Updated");
 					}
+					else
+					{
+						System.out.println("Not found");
+					}
 					break;
 				}
 				case 6:
@@ -100,6 +120,10 @@ public class ModifyCustomer
 					{
 						System.out.println("City Updated");
 					}
+					else
+					{
+						System.out.println("Not found");
+					}
 					break;
 				}
 				case 7:
@@ -110,6 +134,10 @@ public class ModifyCustomer
 					if(flag)
 					{
 						System.out.println("State Updated");
+					}
+					else
+					{
+						System.out.println("Not found");
 					}
 					break;
 				}
@@ -125,6 +153,10 @@ public class ModifyCustomer
 					if(flag)
 					{
 						System.out.println("Pincode Updated");
+					}
+					else
+					{
+						System.out.println("Not found");
 					}
 					break;
 				}
