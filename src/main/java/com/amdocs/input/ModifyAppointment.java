@@ -32,6 +32,10 @@ public class ModifyAppointment
 					{
 						System.out.println("Advocate ID updated");
 					}
+					else
+					{
+						System.out.println("Not Found");
+					}
 					break;
 				}
 				case 2:
@@ -43,6 +47,10 @@ public class ModifyAppointment
 					{
 						System.out.println("Customer ID updated");
 					}
+					else
+					{
+						System.out.println("Not Found");
+					}
 					break;
 				}
 				case 3:
@@ -53,6 +61,10 @@ public class ModifyAppointment
 					if(flag)
 					{
 						System.out.println("Case Type updated");
+					}
+					else
+					{
+						System.out.println("Not Found");
 					}
 					break;
 				}
