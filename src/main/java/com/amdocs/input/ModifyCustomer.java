@@ -28,109 +28,116 @@ public class ModifyCustomer
 		System.out.println("Enter 7 to modify state");
 		System.out.println("Enter 8 to modify pincode");
 		int ch=Integer.parseInt(sc.nextLine());;
-		switch(ch)
+		try
 		{
-			case 1:
+			switch(ch)
 			{
-				System.out.println("Enter new first name:");
-				String value=sc.nextLine();
-				boolean flag=dao.modifyCustomerFirstName(id, value);
-				if(flag)
+				case 1:
 				{
-					System.out.println("First Name Updated");
+					System.out.println("Enter new first name:");
+					String value=sc.nextLine();
+					boolean flag=dao.modifyCustomerFirstName(id, value);
+					if(flag)
+					{
+						System.out.println("First Name Updated");
+					}
+					break;
 				}
-				break;
+				case 2:
+				{
+					System.out.println("Enter new last name:");
+					String value=sc.nextLine();
+					boolean flag=dao.modifyCustomerLastName(id, value);
+					if(flag)
+					{
+						System.out.println("Last Name Updated");
+					}
+					break;
+				}
+				case 3:
+				{
+					System.out.println("Enter new phone number:");
+					String value=sc.nextLine();
+					if (!val.isValidPhoneNumber(value)) 
+					{
+						throw new IPNException("Invalid phone number: " + value);
+					}
+					boolean flag=dao.modifyCustomerPhone(id, value);
+					if(flag)
+					{
+						System.out.println("Phone Number Updated");
+					}
+					break;
+				}
+				case 4:
+				{
+					System.out.println("Enter new gender:");
+					String value=sc.nextLine();
+					boolean flag=dao.modifyCustomerGender(id, value);
+					if(flag)
+					{
+						System.out.println("Gender Updated");
+					}
+					break;
+				}
+				case 5:
+				{
+					System.out.println("Enter new address");
+					String value=sc.nextLine();
+					boolean flag=dao.modifyCustomerAddress(id, value);
+					if(flag)
+					{
+						System.out.println("Address Updated");
+					}
+					break;
+				}
+				case 6:
+				{
+					System.out.println("Enter new city");
+					String value=sc.nextLine();
+					boolean flag=dao.modifyCustomerCity(id, value);
+					if(flag)
+					{
+						System.out.println("City Updated");
+					}
+					break;
+				}
+				case 7:
+				{
+					System.out.println("Enter new state");
+					String value=sc.nextLine();
+					boolean flag=dao.modifyCustomerState(id, value);
+					if(flag)
+					{
+						System.out.println("State Updated");
+					}
+					break;
+				}
+				case 8:
+				{
+					System.out.println("Enter new pincode");
+					String value=sc.nextLine();
+					if(!val.validatePincode(value))
+					{
+						throw new InvalidPincodeException("Invalid pincode: " + value);
+					}
+					boolean flag=dao.modifyCustomerPincode(id, value);
+					if(flag)
+					{
+						System.out.println("Pincode Updated");
+					}
+					break;
+				}
+				default:
+				{
+					System.out.println("O Oo Wrong choice!! Enter again");
+					break;
+				}
 			}
-			case 2:
-			{
-				System.out.println("Enter new last name:");
-				String value=sc.nextLine();
-				boolean flag=dao.modifyCustomerLastName(id, value);
-				if(flag)
-				{
-					System.out.println("First Name Updated");
-				}
-				break;
-			}
-			case 3:
-			{
-				System.out.println("Enter new phone number:");
-				String value=sc.nextLine();
-				if (!val.isValidPhoneNumber(value)) 
-				{
-				    throw new IPNException("Invalid phone number: " + value);
-				}
-				boolean flag=dao.modifyCustomerPhone(id, value);
-				if(flag)
-				{
-					System.out.println("Phone Number Updated");
-				}
-				break;
-			}
-			case 4:
-			{
-				System.out.println("Enter new gender:");
-				String value=sc.nextLine();
-				boolean flag=dao.modifyCustomerGender(id, value);
-				if(flag)
-				{
-					System.out.println("Gender Updated");
-				}
-				break;
-			}
-			case 5:
-			{
-				System.out.println("Enter new address");
-				String value=sc.nextLine();
-				boolean flag=dao.modifyCustomerAddress(id, value);
-				if(flag)
-				{
-					System.out.println("Address Updated");
-				}
-				break;
-			}
-			case 6:
-			{
-				System.out.println("Enter new city");
-				String value=sc.nextLine();
-				boolean flag=dao.modifyCustomerCity(id, value);
-				if(flag)
-				{
-					System.out.println("City Updated");
-				}
-				break;
-			}
-			case 7:
-			{
-				System.out.println("Enter new state");
-				String value=sc.nextLine();
-				boolean flag=dao.modifyCustomerState(id, value);
-				if(flag)
-				{
-					System.out.println("State Updated");
-				}
-				break;
-			}
-			case 8:
-			{
-				System.out.println("Enter new pincode");
-				String value=sc.nextLine();
-				if(!val.validatePincode(value))
-				{
-					throw new InvalidPincodeException("Invalid pincode: " + value);
-				}
-				boolean flag=dao.modifyCustomerPincode(id, value);
-				if(flag)
-				{
-					System.out.println("Pincode Updated");
-				}
-				break;
-			}
-			default:
-			{
-				System.out.println("O Oo Wrong choice!! Enter again");
-				break;
-			}
+		}
+		catch(Exception e)
+		{
+			System.err.println(e);
 		}
 	}
 }
